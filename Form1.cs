@@ -63,7 +63,12 @@ namespace Baif12_Listbox_Name
 
         private void btninsert_Click(object sender, EventArgs e)
         {
-            lstName.Items.Insert(Convert.ToInt32(txtindext.Text), txtName.Text);
+            if (lstName.SelectedIndex >= 0)
+            {
+                lstName.Items.Insert(lstName.SelectedIndex, txtName.Text);
+            }
+
+           
         }
     }
 }
